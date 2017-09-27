@@ -1,0 +1,22 @@
+<%= form_for @chapter do |f| %>
+    <% if @chapter.errors.any? %>
+        <h2><%= pluralize(@chapter.errors.count, "error") %> prevented this chapter from saving:</h2>
+        <ul>
+            <% @chapter.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    <% end %>
+    <%= f.label :title, "標題" %>
+    <br>
+    <%= f.text_field :title %>
+    <br>
+    <br>
+    <%= f.label :content, "內容" %>
+    <br>
+    <%= f.text_area :content %>
+    <br>
+    <br>
+    <%= f.submit "送出" %>
+<% end %>
+

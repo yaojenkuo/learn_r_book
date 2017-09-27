@@ -1,0 +1,8 @@
+<%= @chapter.title %>
+<br>
+<%= @chapter.content %>
+<br>
+<br>
+<%= link_to "編輯", edit_chapter_path(@chapter) %>
+<br>
+<%= link_to "刪除", chapter_path(@chapter), method: :delete, data: {confirm: "確定要刪除這個章節？"} %>
