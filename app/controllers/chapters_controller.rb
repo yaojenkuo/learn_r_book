@@ -1,6 +1,7 @@
 class ChaptersController < ApplicationController
     before_action :find_chapter, only: [:show, :edit, :update, :destroy]
     def index
+        @chapters = Chapter.all
     end
 
     def new

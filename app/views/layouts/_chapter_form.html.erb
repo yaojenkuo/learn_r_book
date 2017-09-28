@@ -7,9 +7,9 @@
             <% end %>
         </ul>
     <% end %>
-    <%= f.input :title, label: "標題" %>
+    <%= f.input :title, label: "標題", required: true %>
     <br>
-    <%= f.input :content, label: "內容" %>
+    <%= f.input :content, label: "內容", required: false %>
     <br>
     <%= f.submit "送出" %>
 <% end %>

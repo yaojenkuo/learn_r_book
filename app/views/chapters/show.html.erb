@@ -1,8 +1,21 @@
-<%= @chapter.title %>
-<br>
-<%= @chapter.content %>
-<br>
-<br>
-<%= link_to "編輯", edit_chapter_path(@chapter) %>
-<br>
-<%= link_to "刪除", chapter_path(@chapter), method: :delete, data: {confirm: "確定要刪除這個章節？"} %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div>
+                <img src="" alt="">
+                <p>實體書由碁峰出版社發行。</p>
+                <a href="https://www.tenlong.com.tw/products/9789864764822" target="_blank"><img src="" alt="前往天瓏網路書店購買"></a>
+                <a href="http://www.books.com.tw/products/0010763975" target="_blank"><img src="" alt="前往博客來購買"></a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <br>
+            <h1><%= @chapter.title %></h1>
+            <br>
+            <p><%= @chapter.content %></p>
+            <%= link_to "編輯", edit_chapter_path(@chapter) %>
+            <br>
+            <%= link_to "刪除", chapter_path(@chapter), method: :delete, data: {confirm: "確定要刪除這個章節？"} %>
+        </div>
+    </div>
+</div>
