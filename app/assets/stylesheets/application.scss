@@ -34,5 +34,9 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+.hidden {
+  display: none;
+}
 @import "bootstrap";
 @import 'pygments';

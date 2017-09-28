@@ -22,6 +22,7 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'simple_form'
 gem 'redcarpet'
 gem 'pygments.rb'
+gem 'mail_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
