@@ -28,7 +28,7 @@ class ChaptersController < ApplicationController
         if @chapter.update chapter_params
             redirect_to @chapter, notice: "成功儲存！"
         else
-            render 'edit'
+            render 'edit', notice: "儲存失敗:("
         end
     end
 
