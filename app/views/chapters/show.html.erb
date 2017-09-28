@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-3">
             <div>
-                <img src="" alt="">
+                <%= image_tag("r_book.jpg", class: "img-fluid") %>
                 <p>實體書由碁峰出版社發行。</p>
                 <a href="https://www.tenlong.com.tw/products/9789864764822" target="_blank"><img src="" alt="前往天瓏網路書店購買"></a>
                 <a href="http://www.books.com.tw/products/0010763975" target="_blank"><img src="" alt="前往博客來購買"></a>
@@ -16,6 +16,8 @@
             <%= link_to "編輯", edit_chapter_path(@chapter) %>
             <br>
             <%= link_to "刪除", chapter_path(@chapter), method: :delete, data: {confirm: "確定要刪除這個章節？"} %>
+            <br>
+            <%= render 'disqus' %>
         </div>
     </div>
 </div>
