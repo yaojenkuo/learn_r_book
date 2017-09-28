@@ -1,22 +1,20 @@
 module ApplicationHelper
-    def to_markdown(text)
-        html_render_options = {
-            filter_html:     true, # no input tag or textarea
-            hard_wrap:       true,
-            link_attributes: { rel: 'nofollow' }
-        }
-
-        markdown_options = {
+    class HTMLwithPygments < Redcarpet::Render::HTML
+        def block_code(code, language)
+            Pygments.highlight(code, lexer: language)
+        end
+    end
+    def to_markdown(content)
+        renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true)
+        options = {
             autolink:           true,
             fenced_code_blocks: true,
             lax_spacing:        true,
             no_intra_emphasis:  true,
             strikethrough:      true,
-            superscript:        true
+            superscript:        true,
+            disable_indented_code_blocks: true
         }
-
-        renderer = Redcarpet::Render::HTML.new(html_render_options)
-        markdown = Redcarpet::Markdown.new(renderer, markdown_options)
-        raw markdown.render(text)
+        Redcarpet::Markdown.new(renderer, options).render(content).html_safe
     end
 end
