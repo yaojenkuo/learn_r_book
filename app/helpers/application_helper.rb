@@ -1,6 +1,4 @@
 module ApplicationHelper
-    class HTMLwithTOC < Redcarpet::Render::HTML_TOC
-    end
     class HTMLwithPygments < Redcarpet::Render::HTML
         def block_code(code, language)
             Pygments.highlight(code, lexer: language)
@@ -20,7 +18,9 @@ module ApplicationHelper
         }
         Redcarpet::Markdown.new(renderer, options).render(content).html_safe
     end
-    def html_toc(content)
-        renderer = Redcarpet::Render::HTML_TOC
+    
+    def to_toc(content)
+        renderer = Redcarpet::Render::HTML_TOC.new(nesting_level: 4)
+        Redcarpet::Markdown.new(renderer).render(content).html_safe
     end
 end

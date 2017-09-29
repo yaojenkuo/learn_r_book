@@ -11,7 +11,7 @@
           目錄
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <% @chapters = Chapter.all.order("title") %>
+          <% @chapters = Chapter.all.order('title') %>
           <% @chapters.each do |chapter| %>
                 <%= link_to chapter.title, chapter, class: "dropdown-item" %>
           <% end %>

@@ -2,10 +2,6 @@ class ChaptersController < ApplicationController
     before_action :find_chapter, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, except: [:index, :show]
 
-    def index
-        @chapters = Chapter.all
-    end
-
     def new
         @chapter = Chapter.new
     end
