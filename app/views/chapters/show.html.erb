@@ -1,16 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <%= render 'layouts/book' %>
-            <div>
-                <%= to_toc(@chapter.content) %>
+            <div class="sticky-top">
+                <%= render 'layouts/book' %>
+                <div id="toc">
+                    <%= to_toc(@chapter.content) %>
+                </div>
             </div>
-            <!--<div class="sticky-top">
-                    <h3>章節</h3>-->
-                    <%# chapters(@chapter).each do |chapter| %>
-                        <%# link_to chapter, "##{chapter.downcase.gsub(/\s/, "" ).slice!(2..-1)}" %>
-                    <%# end %>
-            <!--</div>-->
         </div>
         <div class="col-md-8">
             <br>

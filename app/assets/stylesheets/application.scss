@@ -45,5 +45,13 @@ img {
   margin: auto;
 }
 
+#book {
+  position: relative;
+}
+
+#toc {
+  position: relative;
+} 
+
 @import "bootstrap";
 @import 'pygments';
