@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :events, except: [:show]
   resources :contacts, only: [:new, :create]
   root 'about#index'
+
+  get '*path' => redirect('/')
 end
