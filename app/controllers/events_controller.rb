@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
     before_action :find_event, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, except: [:index]
+    
     def index
         @events = Event.all
     end
@@ -16,9 +18,6 @@ class EventsController < ApplicationController
         else
             render 'new', notice: "儲存失敗:("
         end
-    end
-
-    def show
     end
 
     def edit
