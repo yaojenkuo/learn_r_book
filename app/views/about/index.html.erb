@@ -1,17 +1,19 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
-            <div>
-                <%= image_tag("r_book.jpg", class: "img-fluid") %>
-                <p>實體書由碁峰出版社發行。</p>
-                <a href="https://www.tenlong.com.tw/products/9789864764822" target="_blank"><img src="" alt="前往天瓏網路書店購買"></a>
-                <a href="http://www.books.com.tw/products/0010763975" target="_blank"><img src="" alt="前往博客來購買"></a>
-            </div>
+        <div class="col-md-4">
+            <%= render 'layouts/book' %>
         </div>
-        <div class="col-md-9">
-        <br>
-            <h1>關於本書</h1>
-            <h1>關於作者</h1>
+        <div class="col-md-8">
+            <br>
+            <div>
+                <h3>關於書</h3>
+                <p>我希望可以寫作一本閱讀起來不那麼生澀的程式語言書籍，讓原本沒有程式基礎但是工作上有分析需求的使用者，像是產品經理（Product Managers）、商業分析師（Business Analysts）或行銷企劃人員（Marketing Specialists）能夠用很輕鬆的方式學會 R 語言，進而應用到工作中，提升工作掌握度。</p>
+                <p>這本書的寫作風格以<strong>輕鬆簡潔</strong>作為主要訴求，理想的閱讀時間是工作日的午餐時間，我認為最好的學習就是不佔用讀者工作以外的休憩時間，因此若能夠讓讀者一邊享用美味的午餐，一邊閱讀輕鬆簡潔的程式語言書籍，該是多麽美好而且值得推廣的理念。</p>
+            </div>
+            <div>
+                <h3>關於我</h3>
+                <p>郭耀仁畢業於臺灣大學商學研究所，是資料科學與推廣教育的愛好者，目前是新創團隊 Kyosei.ai 的共同創辦人之一，在<a href="http://train.csie.ntu.edu.tw/train/teacher.php?id=103" target="_blank">台灣大學資訊系統訓練班</a>開設多門 R 語言與 Python 的資料科學相關課程，亦與企業合作提供客製化的內訓課程。在 Kyosei.ai 之前任職過上海的新創團隊、台北的軟體公司與銀行，閒暇時喜歡長跑與乒乓球；著有<a href="http://ithelp.ithome.com.tw/users/20103511/ironman/1077" target="_blank"> R 語言使用者的 Python 學習筆記</a>系列文，是 2017 iT 邦幫忙鐵人賽 Big Data 組冠軍。</p>
+            </div>
         </div>
     </div>
 </div>

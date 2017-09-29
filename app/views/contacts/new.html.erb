@@ -1,33 +1,12 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
-            <div>
-                <%= image_tag("r_book.jpg", class: "img-fluid") %>
-                <p>實體書由碁峰出版社發行。</p>
-                <a href="https://www.tenlong.com.tw/products/9789864764822" target="_blank"><img src="" alt="前往天瓏網路書店購買"></a>
-                <a href="http://www.books.com.tw/products/0010763975" target="_blank"><img src="" alt="前往博客來購買"></a>
-            </div>
+        <div class="col-md-4">
+            <%= render 'layouts/book' %>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8">
         <br>
-            <h1>與我聯絡</h1>
-            <%= simple_form_for @contact do |f| %>
-                <% if @contact.errors.any? %>
-                    <h2><%= pluralize(@contact.errors.count, "error") %> prevented this contact from saving:</h2>
-                    <ul>
-                        <% @contact.errors.full_messages.each do |msg| %>
-                            <li><%= msg %></li>
-                        <% end %>
-                    </ul>
-                <% end %>
-            <%= f.input :name, label: "姓名", required: true , placeholder: 'Chandler Bing'%>
-            <%= f.input :email, label: "電子郵件", required: true , placeholder: 'chandler@friends.com'%>
-            <%= f.input :message, label: "訊息", required: true, as: :text, placeholder: 'Can I interest you in a sarcastic comment?' %>
-            <div class="hidden">
-                <%= f.input :nickname, hint: 'Leave this field blank' %>
-            </div>
-            <%= f.submit "送出" %>
-            <% end %>
+            <h3>與我聯絡</h3>
+            <%= render 'form' %>
         </div>
     </div>
 </div>

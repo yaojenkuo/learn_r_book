@@ -38,5 +38,12 @@ code {
 .hidden {
   display: none;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
+
 @import "bootstrap";
 @import 'pygments';

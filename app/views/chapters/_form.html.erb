@@ -9,7 +9,7 @@
     <% end %>
     <%= f.input :title, label: "標題", required: true %>
     <br>
-    <%= f.input :content, label: "內容", required: true %>
+    <%= f.input :content, label: "內容", as: :text, required: true, :input_html => {:style => 'width: 100%', :rows => 20, class: 'response-project'}%>
     <br>
     <%= f.submit "送出" %>
 <% end %>

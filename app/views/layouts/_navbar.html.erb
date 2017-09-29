@@ -1,10 +1,9 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
   <div class="container">
     <%= link_to "輕鬆學習 R 語言", root_path, class: "navbar-brand" %>
-  <!--<a class="navbar-brand" href="#">輕鬆學習 R 語言</a>-->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
@@ -12,13 +11,11 @@
           目錄
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <% @chapters = Chapter.all.order("title") %>
+          <% @chapters.each do |chapter| %>
+                <%= link_to chapter.title, chapter, class: "dropdown-item" %>
+          <% end %>
         </div>
-      </li>
-      <li class="nav-item">
-        <%= link_to "目錄", chapters_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "活動", events_path, class: "nav-link" %>
@@ -27,6 +24,15 @@
         <%= link_to "與我聯絡", new_contact_path, class: "nav-link" %>
       </li>    
       <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role = "button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            管理者工具
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to "新增章節", new_chapter_path, class: "dropdown-item" %>
+            <%= link_to "新增活動", new_event_path, class: "dropdown-item" %>
+          </div>
+        </li>
         <li class="nav-item">
           <%= link_to "登出", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>

@@ -1,0 +1,17 @@
+<%= simple_form_for @contact do |f| %>
+    <% if @contact.errors.any? %>
+        <h2><%= pluralize(@contact.errors.count, "error") %> prevented this contact from saving:</h2>
+        <ul>
+            <% @contact.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    <% end %>
+    <%= f.input :name, label: "姓名", required: true , placeholder: 'Chandler Bing'%>
+    <%= f.input :email, label: "電子郵件", required: true , placeholder: 'chandler@friends.com'%>
+    <%= f.input :message, label: "訊息", required: true, as: :text, placeholder: 'Can I interest you in a sarcastic comment?' %>
+    <div class="hidden">
+        <%= f.input :nickname, hint: 'Leave this field blank' %>
+    </div>
+    <%= f.submit "送出" %>
+<% end %>
