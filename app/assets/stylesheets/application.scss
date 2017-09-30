@@ -51,7 +51,31 @@ img {
 
 #toc {
   position: relative;
-} 
+}
+
+.img-circle {
+    border-radius: 50%;
+    max-width: 45%;
+}
+
+a .fa {
+  color: black;
+}
+
+a:hover .fa {
+  color: #0AB9BE;
+}
 
 @import "bootstrap";
 @import 'pygments';
+@import 'font-awesome';
+
+a {
+  color: #0AB9BE;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0AB9BE;
+  text-decoration: underline;
+}

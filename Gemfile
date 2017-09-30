@@ -16,7 +16,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'jquery-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'simple_form'
@@ -24,6 +23,7 @@ gem 'redcarpet'
 gem 'pygments.rb'
 gem 'mail_form'
 gem 'devise'
+gem "font-awesome-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

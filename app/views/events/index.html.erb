@@ -5,14 +5,18 @@
         </div>
         <div class="col-md-8">
         <br>
-            <h3>活動</h3>         
-            <% @events.each do |event| %>
-                <h4><%= link_to event.title, event.link, target: "_blank" %></h4>
-                <% if user_signed_in? %>
-                    <div>
-                        <%= link_to "編輯", edit_event_path(event) %>
-                        <%= link_to "刪除", event_path(event), method: :delete, data: {confirm: "確定要刪除這個活動？"} %>
-                    </div>
+            <h3>活動</h3>
+            <% if @events.count == 0 %>
+                <p>近期沒有活動喔 :)</p>
+            <% else %>     
+                <% @events.each do |event| %>
+                    <h4><%= link_to event.title, event.link, target: "_blank" %></h4>
+                    <% if user_signed_in? %>
+                        <div>
+                            <%= link_to "編輯", edit_event_path(event) %>
+                            <%= link_to "刪除", event_path(event), method: :delete, data: {confirm: "確定要刪除這個活動？"} %>
+                        </div>
+                    <% end %>
                 <% end %>
             <% end %>
         </div>
